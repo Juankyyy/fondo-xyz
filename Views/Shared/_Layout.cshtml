@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FODUN - RESERVAS</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
@@ -18,23 +18,26 @@
 
         <nav class="bg-black bg-opacity-10 text-black d-flex justify-content-between align-items-center">
             <div class="left d-flex gap-2">
-                <a class="p-1 bg-white" asp-controller="" asp-action="">Sedes Recreativas y apartamentos</a>
                 
-                @if (ViewData["Title"]?.ToString() != "FODUN - Login") {
+                @if (ViewData["Title"]?.ToString() != "FODUN - Login" && ViewData["Title"]?.ToString() != "FODUN - Registro"){
+                    <a class="p-1 bg-white" asp-controller="" asp-action="">Sedes Recreativas y apartamentos</a>
                     <a class="p-1" asp-controller="" asp-action="">Mis Reservas</a>
                     <a class="p-1" asp-controller="" asp-action="">Actualizar Datos</a>
                     <a class="p-1" asp-controller="Auth" asp-action="Index">Cerrar Sesión</a>
                 } else {
-                    <a class="p-1" asp-controller="Auth" asp-action="Index">Ingreso y Registro</a>
+                    <a class="p-1" asp-controller="" asp-action="">Sedes Recreativas y apartamentos</a>
+                    <a class="p-1 bg-white" asp-controller="Auth" asp-action="Index">Ingreso y Registro</a>
                 }
             </div>
 
-            <div class="right">
-                <div class="user d-flex align-items-center gap-2">
-                    <svg class="bg-white py-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M12 12a4 4 0 1 1 0-8a4 4 0 0 1 0 8m0 3c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15"/></svg>
-                    <p>Bienvenido, <span>Alexander Jovel</span></p>
+            @if (ViewData["Title"]?.ToString() != "FODUN - Login" && ViewData["Title"]?.ToString() != "FODUN - Registro"){
+                <div class="right">
+                    <div class="user d-flex align-items-center gap-2">
+                        <svg class="bg-white py-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M12 12a4 4 0 1 1 0-8a4 4 0 0 1 0 8m0 3c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15"/></svg>
+                        <p>Bienvenido, <span>Alexander Jovel</span></p>
+                    </div>
                 </div>
-            </div>
+            }
         </nav>
     </header>
 

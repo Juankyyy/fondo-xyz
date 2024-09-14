@@ -1,0 +1,201 @@
+@{
+    ViewBag.Title = "FODUN - Registro";
+    ViewBag.css = "register.css";
+}
+
+<h5 class="title mt-3">Registro nuevo usuario</h5>
+
+<div class="main mt-3 mb-5">
+    <div class="form-title d-flex justify-content-center align-items-center text-white">
+        <p>Registro Usuario</p>
+    </div>
+
+    <div class="form-content bg-dark bg-opacity-10">
+        <form>
+            <div class="form d-flex justify-content-evenly align-content-center gap-5">
+                <div class="inputs-left d-flex flex-column gap-2">
+                    <div>
+                        <label>Nro Documento:</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Nombre Completo:</label>
+                        
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Fecha de Nacimientos:</label>
+                        
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="date" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Celular:</label>
+                        
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3 not">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Dirección Email:</label>
+                        
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Departamento:</label>
+                        
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Municipio:</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Barrio:</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Dirección Residencia:</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Teléfono Residencia:</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="inputs-right d-flex flex-column gap-2">
+                    <div>
+                        <label>Pregunta Secreta</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Respuesta Secreta</label>
+
+                        <div class="input-required d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+
+                        <p class="text-black-50">Esta respuesta se utilizará para la Recuperación de la Clave</p>
+                    </div>
+
+                    <div>
+                        <p class="mb-1">¿Autoriza el Envío de información al Correo?:</p>
+                        <div class="d-flex justify-content-between w-75">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sí
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="mb-1">¿Autoriza el Envío de información al Celular?:</p>
+                        <div class="d-flex justify-content-between w-75">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3">
+                                <label class="form-check-label" for="flexRadioDefault3">
+                                    Sí
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault4" checked>
+                                <label class="form-check-label" for="flexRadioDefault4">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label>Clave:</label>
+
+                        <div class="input-required w-75 d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+
+                        <p class="text-black-50">La Clave solo debe Contener 4 Números</p>
+                    </div>
+
+                    <div>
+                        <label>Confimar Clave:</label>
+
+                        <div class="input-required w-75 d-flex gap-1 justify-content-center align-items-center">
+                            <input type="text" class="form-control">
+                            <p class="fs-3">*</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btns d-flex justify-content-center mt-2 mb-2 gap-3">
+                <button type="submit" class="btn btn-sm btn-outline-dark d-flex justify-content-center align-items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 18H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7.5"/><path d="m3 6l9 6l9-6m-6 12h6m-3-3l3 3l-3 3"/></g></svg>
+                    Enviar
+                </button>
+                <a asp-action="Index" class="btn btn-sm btn-outline-dark d-flex justify-content-center align-items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="red" d="M8.25 21L3 15.75v-7.5L8.25 3h7.5L21 8.25v7.5L15.75 21zm.9-4.75L12 13.4l2.85 2.85l1.4-1.4L13.4 12l2.85-2.85l-1.4-1.4L12 10.6L9.15 7.75l-1.4 1.4L10.6 12l-2.85 2.85z"/></svg>
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

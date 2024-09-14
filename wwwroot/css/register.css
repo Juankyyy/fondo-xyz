@@ -1,0 +1,45 @@
+.title {
+    color: #a01c27;
+    margin-left: 150px;
+}
+
+.main {
+    margin: 0px 150px;
+}
+
+.form-title {
+    background-color: #a01c27;
+    width: fit-content;
+    padding: 0px 30px;
+    height: 30px;
+}
+
+.form-content {
+    border-top: 4px solid #a01c27;
+}
+
+.form {
+    margin: 10px 20px;
+    
+    input[type="text"], input[type="email"], input[type="date"] {
+        height: 25px;
+        min-width: 300px !important;
+    }
+}
+
+.btns {
+    button, a {
+        height: 25px;
+    }
+}
+
+.input-required {
+    p {
+        color: red;
+        line-height: 10px;
+    }
+
+    .not {
+        color: transparent;
+    }
+}

@@ -1,12 +1,16 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["css"] = "layout.css";
+}
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/@ViewData["css"]" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -24,7 +28,7 @@
 
             <div class="right">
                 <div class="user d-flex gap-2">
-                    <svg class="bg-white py-0 " xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M12 12a4 4 0 1 1 0-8a4 4 0 0 1 0 8m0 3c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15"/></svg>
+                    <svg class="bg-white py-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M12 12a4 4 0 1 1 0-8a4 4 0 0 1 0 8m0 3c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15"/></svg>
                     <p>Bienvenido, <span>Alexander Jovel</span></p>
                 </div>
             </div>
@@ -35,10 +39,8 @@
             @RenderBody()
         </main>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - fondoxyz - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer class="d-flex justify-content-center fixed-bottom text-white py-2">
+        <p>FODUN - Fondo de Docentes Universidad Nacional - Derechos Reservados &copy; 2014 - Desarrollado por MarketingItSolutions S.A.S</p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

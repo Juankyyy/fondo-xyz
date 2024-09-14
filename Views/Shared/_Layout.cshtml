@@ -1,16 +1,14 @@
-﻿@{
-    ViewData["css"] = "layout.css";
-}
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    <title>FODUN - RESERVAS</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/@ViewData["css"]" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/fodun.svg">
 </head>
 <body>
     <header>
@@ -27,7 +25,7 @@
             </div>
 
             <div class="right">
-                <div class="user d-flex gap-2">
+                <div class="user d-flex align-items-center gap-2">
                     <svg class="bg-white py-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M12 12a4 4 0 1 1 0-8a4 4 0 0 1 0 8m0 3c3.186 0 6.045.571 8 3.063V20H4v-1.937C5.955 15.57 8.814 15 12 15"/></svg>
                     <p>Bienvenido, <span>Alexander Jovel</span></p>
                 </div>

@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using fondo_xyz.Models;
+using fondoxyz.Models;
 
-namespace fondo_xyz.Controllers;
+namespace fondoxyz.Controllers;
 
 public class HomeController : Controller
 {

@@ -1,4 +1,4 @@
-namespace fondo_xyz.Models;
+namespace fondoxyz.Models;
 
 public class ErrorViewModel
 {

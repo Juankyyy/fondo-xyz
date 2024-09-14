@@ -1,0 +1,66 @@
+@{
+    ViewBag.Title = "FODUN - Login";
+    ViewBag.css = "login.css";
+}
+
+<div class="login d-flex justify-content-evenly align-items-center">
+    <div class="banner">
+        <img src="~/img/bannerLogin.jpg" alt="Banner FODUN">
+    </div>
+
+    <div class="form d-flex flex-column gap-2 mx-5">
+        <div class="title bg-black bg-opacity-10 rounded">
+            <p>Ingreso Sistema de Reservas</p>
+        </div>
+
+        <p class="text-center">Digite su Clave a través del teclado dinámico que <br> se encuentra en la pantalla</p>
+
+        <form class="d-flex gap-3">
+            <div class="form-left d-flex flex-column align-items-end">
+                <label>
+                    Nro. Documento:
+                    <input type="text">
+                </label>
+
+                <label class="mt-2">
+                    Clave:
+                    <input type="text">
+                </label>
+
+                <button class="btn btn-sm btn-danger mt-2">Aceptar</button>
+                <p>¿Olvidó su clave?</p>
+            </div>
+
+            <div class="form-right d-flex flex-column">
+                <div class="numbers d-flex flex-wrap gap-1">
+                    <p class="btn btn-sm btn-danger">1</p>
+                    <p class="btn btn-sm btn-danger">2</p>
+                    <p class="btn btn-sm btn-danger">3</p>
+                    <p class="btn btn-sm btn-danger">4</p>
+                    <p class="btn btn-sm btn-danger">5</p>
+                    <p class="btn btn-sm btn-danger">6</p>
+                    <p class="btn btn-sm btn-danger">7</p>
+                    <p class="btn btn-sm btn-danger">8</p>
+                    <p class="btn btn-sm btn-danger">9</p>
+                    <p class="btn btn-sm btn-danger">0</p>
+                    
+                    <button class="btn btn-sm btn-danger">Limpiar</button>
+                </div>
+
+                <div class="contrast w-100 d-flex flex-column align-items-center mt-1">
+                    <p class="fw-bold">Contraste</p>
+
+                    <div class="btns">
+                        <button class="btn btn-sm btn-danger"></button>
+                        <button class="btn btn-sm btn-danger"></button>
+                        <button class="btn btn-sm btn-danger"></button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <a asp-action="" class="register mt-2">
+            <img height="84px" width="297px" src="~/img/bannerRegister.png" alt="">
+        </a>
+    </div>
+</div>

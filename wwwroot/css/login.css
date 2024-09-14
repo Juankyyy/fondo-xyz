@@ -1,0 +1,58 @@
+.login {
+    height: calc(100vh - 155px);
+}
+
+.banner {
+    height: min-content;
+}
+
+.title p {
+    padding-left: 10px;
+}
+
+.submit button {
+    border-radius: 20px;
+}
+
+.register {
+    width: min-content;
+    box-shadow: 2px 2px 8px #0000004f;
+}
+
+.form-left {
+    input {
+        width: 100px;
+        height: 23px;
+    }
+
+    button {
+        border-radius: 20px;
+        padding: 0px 15px;
+    }
+}
+
+.form-right {
+    .numbers {
+        width: 150px;
+    }
+
+    p {
+        height: min-content;
+        border-radius: 100px;
+        padding: 0px 15px;
+    }
+
+    button {
+        height: min-content;
+        border-radius: 20px;
+        padding: 0px 10px;
+    }
+}
+
+.btns {
+    button {
+        height: 23px;
+        border-radius: 20px;
+        padding: 0px 20px;
+    }
+}

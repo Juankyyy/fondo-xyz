@@ -1,0 +1,13 @@
+nav a {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+nav a:hover {
+    background-color: #fff;
+}
+
+nav {
+    padding-left: 150px;
+    padding-right: 150px;
+}

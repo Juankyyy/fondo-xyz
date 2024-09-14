@@ -1,5 +1,42 @@
 ﻿@{
+    ViewData["Title"] = "FODUN - Home";
     ViewData["css"] = "home.css";
 }
 
 <h5 class="title mt-3">Sedes Recreativas y apartamentos</h5>
+
+<div class="main mt-3 mb-5">
+    <div class="d-flex justify align-items-center text-white gap-3">
+        <div class="main-title d-flex justify-content-center align-items-center">
+            <p>Sedes Recreativas y apartamentos</p>
+        </div>
+
+        <p class="text-black-50">Selecciones sus Fechas</p>
+    </div>
+
+    <div class="main-content">
+        <table class="table table-striped text-center align-middle table-secondary">
+            <thead>
+                <tr>
+                    <th>ㅤ</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Tipo</th>
+                    <th>Ubicación</th>
+                    <th>Seleccionar</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td><img width="200px" src="~/img/sede1.png" alt="Sede 1" class="img-fluid"></td>
+                    <td>Nombre Sede 1</td>
+                    <td>Descripción Sede 1</td>
+                    <td>Tipo Sede 1</td>
+                    <td>Ubicación Sede 1</td>
+                    <td><button class="btn btn-sm btn-danger">Seleccionar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

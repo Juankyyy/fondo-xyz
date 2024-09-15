@@ -101,7 +101,7 @@
                             <p class="details-subtitle">$000.000</p>
                         </div>
 
-                        <p class="btn btn-danger d-flex justify-content-center mt-2">Reservar</p>
+                        <p class="btn btn-danger d-flex justify-content-center mt-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Reservar</p>
                     </div>
 
                 </div>
@@ -130,7 +130,7 @@
                     </div>
                 </div>
 
-                <div class="site-info d-flex gap-2 flex-column">
+                <div class="site-info d-flex gap-2 flex-column ">
                     <p>Esta Sede recreativa se encuentra ubicada en el barrio San Jorge a poca distancia de la plaza central de Villeta en la Provincia del Gualivá, Cundinamarca, distante de Bogotá 90 kilómetros, aproximadamente hora y media por la autopista Bogotá - Medellín.</p>
                     <p>La sede recreativa tiene un área aproximada de 1 fanegada, con amplias zonas verdes.</p>
                     
@@ -169,17 +169,206 @@
 
                 <tbody>
                     <tr>
-                        <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100"><path fill="#787878" d="M56.774 10.391c-17.679 0-32.001 14.329-32.001 32a31.85 31.85 0 0 0 4.588 16.517L13.846 74.423l.054.054c-1.656 1.585-2.673 3.835-2.673 6.378c-.001 4.913 3.913 8.755 8.821 8.754c2.507-.001 4.749-1.004 6.349-2.636l.039.039l16.008-16.009a31.9 31.9 0 0 0 14.33 3.388c17.68 0 31.999-14.327 31.999-32c0-17.671-14.32-32-31.999-32m.194 51.417c-11.05 0-20.001-8.954-20.001-20c0-11.044 8.951-20 20.001-20s19.999 8.955 19.999 20c.001 11.046-8.949 20-19.999 20"/></svg></td>
+                        <td>
+                            <div class="details-svg" data-bs-toggle="modal" data-bs-target="#DetailsModal">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100"><path fill="#787878" d="M56.774 10.391c-17.679 0-32.001 14.329-32.001 32a31.85 31.85 0 0 0 4.588 16.517L13.846 74.423l.054.054c-1.656 1.585-2.673 3.835-2.673 6.378c-.001 4.913 3.913 8.755 8.821 8.754c2.507-.001 4.749-1.004 6.349-2.636l.039.039l16.008-16.009a31.9 31.9 0 0 0 14.33 3.388c17.68 0 31.999-14.327 31.999-32c0-17.671-14.32-32-31.999-32m.194 51.417c-11.05 0-20.001-8.954-20.001-20c0-11.044 8.951-20 20.001-20s19.999 8.955 19.999 20c.001 11.046-8.949 20-19.999 20"/></svg>
+                            </div>
+                        </td>
                         <td>1</td>
                         <td>4</td>
                         <td>$100.000</td>
                         <td>$120.000</td>
                         <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#000000"/></svg></td>
-                        <td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#000000" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg></td>
+                        <td>
+                            <div class="details-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#787878" d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                            </div>
+                        </td>
                         <td><input class="form-check-input" type="checkbox" value="" id="reverseCheck1"></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-2">
+                <h1 class="modal-title fs-6 details-subtitle" id="staticBackdropLabel">Confirmación Reserva</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body d-flex flex-column align-items-center">
+                <div class="text-center">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium sunt beatae, dicta eum non corrupti cupiditate ex asperiores facere</p>
+                </div>
+
+                <div class="info d-flex w-100 justify-content-around mt-3">
+                    <div class="modal-date">
+                        <h5 class="details-subtitle">Mis Fechas</h5>
+                        <div class="date-inputs">
+                            <div>
+                                <label>Fecha de Llegada:</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div>
+                                <label>Fecha de Salida:</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <div class="w-50">
+                                <label>Noches:</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div class="w-50">
+                                <label>Personas:</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div class="form-check mt-1">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Servicio de lavandería
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-total">
+                        <h5 class="details-subtitle">Total Reserva</h5>
+                        <div class="date-inputs">
+                            <div class="w-50">
+                                <label>Habitaciones:</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div>
+                                <label>Dias ordinarios:</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div>
+                                <label>Dias Especiales:</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div>
+                                <label>Lavandería:</label>
+                                <input type="number" class="form-control">
+                            </div>
+
+                            <div class="d-flex gap-2 justify-content-center mt-2 fs-5">
+                                <p>Valor Total:</p>
+                                <p class="details-subtitle border-0">$000.000</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Confirmar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* Details room *@
+<div class="modal fade" id="DetailsModal" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header p-2">
+                <h1 class="modal-title fs-6 details-subtitle" id="staticBackdropLabel">Confirmación Reserva</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body d-flex flex-column align-items-center">
+                <div class="text-center">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum praesentium sunt beatae, dicta eum non corrupti cupiditate ex asperiores facere</p>
+                </div>
+
+                <div class="info d-flex w-100 justify-content-around mt-5">
+                    <div class="modal-details">
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p>Cama doble</p>
+                        </div>
+                        
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p>Camarote</p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p>Baño</p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p>Nevera</p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p>Televisor</p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p>Terraza Cubierta</p>
+                        </div>
+                    </div>
+
+                    <div class="modal-total">
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p class="d-flex justify-content-between w-100 gap-4">Habitación / Alojamiento: <span class="fw-normal">1</span></p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p class="d-flex justify-content-between w-100 gap-4">Capacidad: <span class="fw-normal">4</span></p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p class="d-flex justify-content-between w-100 gap-4">Tarifa día Ordinario: <span class="fw-normal">$100.000</span></p>
+                        </div>
+
+                        <div class="d-flex gap-2 fw-bold align-items-center">
+                            <div class="check d-flex justify-content-center align-items-center p-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M12 5l-8 8l-4-4l1.5-1.5L4 10l6.5-6.5L12 5z" fill="#00000083"/></svg>
+                            </div>
+                            <p class="d-flex justify-content-between w-100 gap-4">Tarifa día Especial: <span class="fw-normal">$120.000</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

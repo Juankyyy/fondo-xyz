@@ -31,7 +31,7 @@
 }
 
 /* Details */
-.date {
+.date, .info {
     input[type="text"], input[type="number"], input[type="date"] {
         height: 25px;
     }
@@ -46,4 +46,37 @@
     width: 300px;
     height: 60dvh;
     overflow-y: scroll;
+    text-wrap: pretty;
+}
+
+.modal-header {
+    button {
+        background-size: 15px 15px;
+    }
+}
+
+.info {
+    .details-subtitle {
+        border-bottom: 1.5px solid #a01c27;
+        padding-bottom: 1px;
+    }
+}
+
+.check {
+    border-radius: 20px;
+    border: 1px solid #00000083;
+}
+
+.modal-details, .modal-total {
+    .fw-bold {
+        margin-bottom: 15px;
+    }
+}
+
+.details-svg svg {
+    cursor: pointer;
+}
+
+.details-svg svg:hover path {
+    fill: #000;
 }

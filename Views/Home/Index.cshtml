@@ -15,7 +15,7 @@
     </div>
 
     <div class="main-content">
-        <table class="table table-striped text-center align-middle table-secondary">
+        <table id="sitesTable" class="table table-striped text-center align-middle table-secondary">
             <thead>
                 <tr>
                     <th>ㅤ</th>
@@ -34,9 +34,18 @@
                     <td>Descripción Sede 1</td>
                     <td>Tipo Sede 1</td>
                     <td>Ubicación Sede 1</td>
-                    <td><p class="btn btn-sm btn-danger select">Seleccionar</p></td>
+                    <td><p class="btn btn-sm btn-danger select"
+                    data-name="Nombre Sede 1" 
+                    data-description="Descripción Sede 1" 
+                    data-type="Tipo Sede 1" 
+                    data-ubication="Ubicación Sede 1">
+                    Seleccionar</p></td>
                 </tr>
             </tbody>
         </table>
+
+        <div id="siteDetail">
+            <p>Detalles</p>
+        </div>
     </div>
 </div>

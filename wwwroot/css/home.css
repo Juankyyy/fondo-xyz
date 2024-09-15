@@ -25,3 +25,7 @@
 .main-content {
     border-top: 4px solid #a01c27;
 }
+
+#siteDetail {
+    display: none;
+}

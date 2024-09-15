@@ -15,11 +15,19 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        if (!User.Identity.IsAuthenticated)
+        {
+            return RedirectToAction("Index", "Auth");
+        }
         return View();
     }
 
     public IActionResult Reserves()
     {
+        if (!User.Identity.IsAuthenticated)
+        {
+            return RedirectToAction("Index", "Auth");
+        }
         return View();
     }
 

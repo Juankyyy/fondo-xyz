@@ -1,4 +1,6 @@
 using fondoxyz.Services;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
 namespace fondoxyz.Controllers
@@ -19,6 +21,18 @@ namespace fondoxyz.Controllers
         public IActionResult Register()
         {
             return View();
+        }
+
+        public IActionResult Login()
+        {
+            
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -29,3 +29,21 @@
 #siteDetail {
     display: none;
 }
+
+/* Details */
+.date {
+    input[type="text"], input[type="number"], input[type="date"] {
+        height: 25px;
+    }
+}
+
+.details-subtitle {
+    color: #a01c27;
+    font-weight: bold;
+}
+
+.site-info {
+    width: 300px;
+    height: 60dvh;
+    overflow-y: scroll;
+}

@@ -1,4 +1,15 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const btnSelect = document.querySelectorAll('.select');
+const selectDates = document.getElementById('selectDates');
+const sites = document.getElementById('sites');
 
-// Write your JavaScript code.
+btnSelect.forEach(button => {
+    button.addEventListener('click', () => {
+        selectDates.classList = 'main-title';
+        sites.parentNode.className = 'text-black';
+    });
+});
+
+sites.addEventListener("click", () => {
+    selectDates.className = 'text-black-50';
+    sites.parentNode.className = 'main-title';
+})

@@ -8,10 +8,18 @@
 }
 
 .main-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #a01c27;
+    color: #fff !important;
     width: fit-content;
     padding: 0px 30px;
     height: 30px;
+}
+
+#sites {
+    cursor: pointer;
 }
 
 .main-content {

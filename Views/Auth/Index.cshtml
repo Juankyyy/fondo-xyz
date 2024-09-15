@@ -1,3 +1,4 @@
+@model Users;
 @{
     ViewBag.Title = "FODUN - Login";
     ViewBag.css = "login.css";
@@ -15,20 +16,20 @@
 
         <p class="text-center">Digite su Clave a través del teclado dinámico que <br> se encuentra en la pantalla</p>
 
-        <form class="d-flex gap-3">
+        <form class="d-flex gap-3" asp-controller="Auth" asp-action="Login" method="post">
             <div class="form-left d-flex flex-column align-items-end">
                 <label>
                     Nro. Documento:
-                    <input type="text">
+                    <input type="number" asp-for="Document">
                 </label>
 
                 <label class="mt-2">
                     Clave:
-                    <input type="text">
+                    <input type="text" asp-for="Password">
                 </label>
 
                 <button class="btn btn-sm btn-danger mt-2">Aceptar</button>
-                <p>¿Olvidó su clave?</p>
+                <a href="">¿Olvidó su clave?</a>
             </div>
 
             <div class="form-right d-flex flex-column">
@@ -44,20 +45,27 @@
                     <p class="btn btn-sm btn-danger">9</p>
                     <p class="btn btn-sm btn-danger">0</p>
                     
-                    <button class="btn btn-sm btn-danger">Limpiar</button>
+                    <p class="btn btn-sm btn-danger">Limpiar</p>
                 </div>
 
                 <div class="contrast w-100 d-flex flex-column align-items-center mt-1">
                     <p class="fw-bold">Contraste</p>
 
                     <div class="btns">
-                        <button class="btn btn-sm btn-danger"></button>
-                        <button class="btn btn-sm btn-danger"></button>
-                        <button class="btn btn-sm btn-danger"></button>
+                        <p class="btn btn-sm btn-danger"></p>
+                        <p class="btn btn-sm btn-danger"></p>
+                        <p class="btn btn-sm btn-danger"></p>
                     </div>
                 </div>
             </div>
         </form>
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="error-message alert alert-danger py-1 my-1" role="alert">
+                <p>@TempData["ErrorMessage"]</p>
+            </div>
+        }
 
         <a asp-action="Register" class="register mt-2">
             <img height="84px" width="297px" src="~/img/bannerRegister.png" alt="Banner Register">

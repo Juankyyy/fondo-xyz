@@ -82,5 +82,7 @@ CREATE TABLE Reserves (
 
 INSERT INTO Reserves (Location, ReservationDate, ArrivalDate, DepartureDate, Persons, Rooms, Total, UserId)
 VALUES ('Sede Recreativa Villeta', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$800.000', 1),
-('Sede Recreativa el Placer', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$800.000', 10),
-('Edificio Suramericana', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$800.000', 11);
+('Edificio Surameriana', '2025-01-02', '2025-01-02', '2025-02-01', 3, 2, '$600.000', 1),
+('Sede Recreativa el Placer', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$810.000', 10),
+('Edificio Suramericana', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$670.000', 11),
+('Edificio Reina', '2024-12-10', '2024-12-10', '2024-12-20', 8, 3, '$1.000.000', 11);

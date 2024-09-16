@@ -25,6 +25,9 @@ namespace fondoxyz.Models
         public int Rooms { get; set; }
         
         [Required]
+        public string Total { get; set; }
+        
+        [Required]
         public int UserId { get; set; }
     }
 }

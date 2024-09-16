@@ -30,3 +30,25 @@ sites.addEventListener("click", () => {
     sitesTable.style.display = 'table';
     siteDetail.style.display = 'none';
 })
+
+
+// Details
+const siteTitle = document.querySelector('#siteTitle');
+const siteImg1 = document.querySelector('#siteImg1');
+const siteImg2 = document.querySelectorAll('#siteImg2');
+const siteImg3 = document.querySelectorAll('#siteImg3');
+const siteDescription = document.querySelector('#siteDescription');
+
+const dataDetails = function (property) {
+    siteTitle.textContent = property.name;
+    siteImg1.src = property.image1;
+    siteImg2.forEach(img => {
+        img.src = property.image2;
+    });
+
+    siteImg3.forEach(img => {
+        img.src = property.image3;
+    });
+    
+    siteDescription.textContent = property.description;
+}

@@ -8,5 +8,6 @@ namespace fondoxyz.Data
         public FondoxyzContext(DbContextOptions<FondoxyzContext> options) : base(options) {}
 
         public DbSet<Users> Users { get; set; }
+        public DbSet<Properties> Properties { get; set; }
     }
 }

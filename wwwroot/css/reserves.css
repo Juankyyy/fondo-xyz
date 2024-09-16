@@ -17,3 +17,11 @@
 .main-content {
     border-top: 4px solid #a01c27;
 }
+
+.details-svg svg {
+    cursor: pointer;
+}
+
+.details-svg svg:hover path {
+    fill: #000;
+}

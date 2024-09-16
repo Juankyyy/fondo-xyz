@@ -28,14 +28,17 @@
             </thead>
 
             <tbody>
-                <tr>
-                    <td><img width="200px" src="~/img/sede1.png" alt="Sede 1" class="img-fluid"></td>
-                    <td>Nombre Sede 1</td>
-                    <td>Descripción Sede 1</td>
-                    <td>Tipo Sede 1</td>
-                    <td>Ubicación Sede 1</td>
-                    <td><p class="btn btn-sm btn-danger select">Seleccionar</p></td>
-                </tr>
+                @foreach (var property in Model)
+                {
+                    <tr>
+                        <td><img width="120px" src="@property.Image1" alt="@property.Name" class="img-fluid"></td>
+                        <td>@property.Name</td>
+                        <td class="site-description">@(property.Description.Substring(0, 100) + "...")</td>
+                        <td>@property.Type</td>
+                        <td>@property.Location</td>
+                        <td><p class="btn btn-sm btn-danger select" onclick='dataDetails(@Html.Raw(Json.Serialize(property)))'>Seleccionar</p></td>
+                    </tr>
+                }
             </tbody>
         </table>
 
@@ -107,16 +110,16 @@
                 </div>
 
                 <div class="site-img">
-                    <h5 class="details-subtitle">Sede Recreativa Villeta</h5>
+                    <h5 class="details-subtitle" id="siteTitle">Sede Recreativa Villeta</h5>
 
                     <div class="imgs d-flex flex-column align-items-center gap-3">
-                        <img width="350px" src="~/img/villeta.png" alt="Sede villeta" class="img-fluid">
+                        <img width="350px" id="siteImg1" src="~/img/villeta2.png" class="img-fluid">
 
                         <div class="subimgs d-flex justify-content-around w-100">
-                            <img width="70px" src="~/img/villeta2.png" alt="">
-                            <img width="70px" src="~/img/sede1.png" alt="">
-                            <img width="70px" src="~/img/villeta2.png" alt="">
-                            <img width="70px" src="~/img/sede1.png" alt="">
+                            <img width="70px" id="siteImg2" src="~/img/villeta2.png" alt="">
+                            <img width="70px" id="siteImg3" src="~/img/villeta1.png" alt="">
+                            <img width="70px" id="siteImg2" src="~/img/villeta2.png" alt="">
+                            <img width="70px" id="siteImg3" src="~/img/villeta1.png" alt="">
                         </div>
 
                         <div class="route d-flex justify-content-center align-items-center gap-1">
@@ -131,22 +134,15 @@
                 </div>
 
                 <div class="site-info d-flex gap-2 flex-column ">
-                    <p>Esta Sede recreativa se encuentra ubicada en el barrio San Jorge a poca distancia de la plaza central de Villeta en la Provincia del Gualivá, Cundinamarca, distante de Bogotá 90 kilómetros, aproximadamente hora y media por la autopista Bogotá - Medellín.</p>
-                    <p>La sede recreativa tiene un área aproximada de 1 fanegada, con amplias zonas verdes.</p>
-                    
-                    <div>
-                        <p class="fw-bold mt-1">Servicios de la sede</p>
-                        <p>Sala de estar y Televisión, sala de conferencias con capacidad para 20 personas, zona de juegos: billar, tenis de mesa, futbolín y juegos de mesa.</p>
-                    </div>
-
-                    <p>Área para comedores, 4 cocinetas equipadas, baños de emergencia, vestieres y lockers para visita día, tienda, sauna, jacuzzi, piscina, cancha de microfutbol y amplias zonas verdes.</p>
-
-                    <div>
-                        <p class="fw-bold">Alojamientos</p>
-                        <p>Ocho habitaciones cada una con una alcoba que tiene una cama doble y un camarote, baño, nevera, televisor y terraza cubierta.</p>
-                    </div>
-
-                    <p>Capacidad total: hasta 32 personas</p>
+                    <p id="siteDescription">Esta Sede recreativa se encuentra ubicada en el barrio San Jorge a poca distancia de la plaza central de Villeta en la Provincia del Gualivá, Cundinamarca, distante de Bogotá 90 kilómetros, aproximadamente hora y media por la autopista Bogotá - Medellín.
+                        La sede recreativa tiene un área aproximada de 1 fanegada, con amplias zonas verdes.
+                        Servicios de la sede
+                        Sala de estar y Televisión, sala de conferencias con capacidad para 20 personas, zona de juegos: billar, tenis de mesa, futbolín y juegos de mesa.
+                        Área para comedores, 4 cocinetas equipadas, baños de emergencia, vestieres y lockers para visita día, tienda, sauna, jacuzzi, piscina, cancha de microfutbol y amplias zonas verdes.
+                        Alojamientos
+                        Ocho habitaciones cada una con una alcoba que tiene una cama doble y un camarote, baño, nevera, televisor y terraza cubierta.
+                        Capacidad total: hasta 32 personas
+                    </p>
             </div>
         </div>
 

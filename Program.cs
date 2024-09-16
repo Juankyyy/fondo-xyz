@@ -11,6 +11,7 @@ builder.Services.AddDbContext<FondoxyzContext>(options =>
 
 builder.Services.AddScoped<UserRepository>();
 builder.Services.AddScoped<ReserveRepository>();
+builder.Services.AddScoped<RoomRepository>();
 
 // Cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

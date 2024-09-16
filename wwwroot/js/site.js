@@ -11,13 +11,6 @@ btnSelect.forEach(button => {
         selectDates.classList = 'main-title';
         sites.parentNode.className = 'text-black';
 
-        const btn = event.target;
-
-        const nombre = btn.getAttribute('data-name');
-        const descripcion = btn.getAttribute('data-description');
-        const tipo = btn.getAttribute('data-type');
-        const ubicacion = btn.getAttribute('data-ubication');
-
         sitesTable.style.display = 'none';
         siteDetail.style.display = 'block';
     });
@@ -51,4 +44,14 @@ const dataDetails = function (property) {
     });
     
     siteDescription.textContent = property.description;
+
+    try {
+        fetch(`/Room/GetRoomsByPlace?id=${property.id}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+    } catch (error) {
+        console.error(error.Message);
+    }
 }

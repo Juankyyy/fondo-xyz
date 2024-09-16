@@ -1,3 +1,4 @@
+@model Users;
 @{
     ViewBag.Title = "FODUN - Registro";
     ViewBag.css = "register.css";
@@ -18,7 +19,7 @@
                         <label>Nro Documento:</label>
 
                         <div class="input-required d-flex gap-1 justify-content-center align-items-center">
-                            <input type="text" class="form-control">
+                            <input id="document" type="number" class="form-control" asp-for="Document">
                             <p class="fs-3">*</p>
                         </div>
                     </div>
@@ -27,7 +28,7 @@
                         <label>Nombre Completo:</label>
                         
                         <div class="input-required d-flex gap-1 justify-content-center align-items-center">
-                            <input type="text" class="form-control">
+                            <input id="name" type="text" class="form-control" asp-for="Name">
                             <p class="fs-3">*</p>
                         </div>
                     </div>
@@ -54,7 +55,7 @@
                         <label>Dirección Email:</label>
                         
                         <div class="input-required d-flex gap-1 justify-content-center align-items-center">
-                            <input type="text" class="form-control">
+                            <input id="email" type="email" class="form-control" asp-for="Email">
                             <p class="fs-3">*</p>
                         </div>
                     </div>
@@ -173,26 +174,30 @@
                         <label>Clave:</label>
 
                         <div class="input-required w-75 d-flex gap-1 justify-content-center align-items-center">
-                            <input type="text" class="form-control">
+                            <input id="password" type="text" class="form-control" asp-for="Password">
                             <p class="fs-3">*</p>
                         </div>
 
-                        <p class="text-black-50">La Clave solo debe Contener 4 Números</p>
+                        <p id="passwordLenght" class="text-black-50">La Clave solo debe Contener 4 Números</p>
                     </div>
 
                     <div>
                         <label>Confimar Clave:</label>
 
                         <div class="input-required w-75 d-flex gap-1 justify-content-center align-items-center">
-                            <input type="text" class="form-control">
+                            <input id="confirmPassword" type="text" class="form-control">
                             <p class="fs-3">*</p>
                         </div>
+                    </div>
+
+                    <div class="hide error-message alert alert-danger py-1 my-1 mt-1 w-75" role="alert">
+                        <p>Contraseñas no coinciden</p>
                     </div>
                 </div>
             </div>
 
             <div class="btns d-flex justify-content-center mt-2 mb-2 gap-3">
-                <button type="submit" class="btn btn-sm btn-outline-dark d-flex justify-content-center align-items-center gap-1">
+                <button id="submit" asp-action="SignUp" asp-controller="Auth" type="submit" class="disabled btn btn-sm btn-outline-dark d-flex justify-content-center align-items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 18H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7.5"/><path d="m3 6l9 6l9-6m-6 12h6m-3-3l3 3l-3 3"/></g></svg>
                     Enviar
                 </button>
@@ -204,3 +209,59 @@
         </form>
     </div>
 </div>
+
+<script>
+    // Register
+    const confirmPassword = document.getElementById('confirmPassword');
+    const password = document.getElementById('password');
+    const errorMessage = document.querySelector('.error-message');
+    const submit = document.getElementById('submit');
+    const passwordLenght = document.getElementById('passwordLenght');
+
+    password.addEventListener('input', () => {
+        if (confirmPassword.value != password.value) {
+            errorMessage.classList.remove('hide');
+        } else {
+            errorMessage.classList.add('hide');
+            submit.classList.remove('disabled');
+        }
+
+        if (password.value.length < 4) {
+            submit.classList.add('disabled');
+            passwordLenght.className = 'text-danger fw-bold';
+        } else {
+            passwordLenght.className = 'text-black-50';
+
+            if (confirmPassword.value != password.value) {
+                errorMessage.classList.remove('hide');
+            } else {
+                errorMessage.classList.add('hide');
+                submit.classList.remove('disabled');
+            }
+        }
+    });
+
+    confirmPassword.addEventListener('input', () => {
+        if (confirmPassword.value != password.value) {
+            errorMessage.classList.remove('hide');
+            submit.classList.add('disabled');
+        } else {
+            errorMessage.classList.add('hide');
+            submit.classList.remove('disabled');
+        }
+
+        if (password.value.length < 4) {
+            submit.classList.add('disabled');
+            passwordLenght.className = 'text-danger fw-bold';
+        } else {
+            passwordLenght.className = 'text-black-50';
+
+            if (confirmPassword.value != password.value) {
+                errorMessage.classList.remove('hide');
+            } else {
+                errorMessage.classList.add('hide');
+                submit.classList.remove('disabled');
+            }
+        }
+    });
+</script>

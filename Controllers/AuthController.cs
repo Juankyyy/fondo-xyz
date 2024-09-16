@@ -67,6 +67,24 @@ namespace fondoxyz.Controllers
             }
         }
 
+        public IActionResult SignUp(Users user)
+        {
+            try
+            {
+                if (user != null)
+                {
+                    _userRepository.CreateUser(user);
+                    TempData["ErrorMessage"] = "Usuario registrado correctamente";
+                    return RedirectToAction("Index");
+                }
+                return View("Register");
+            } catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return RedirectToAction("Register");
+            }
+        }
+
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);

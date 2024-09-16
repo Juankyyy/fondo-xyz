@@ -16,5 +16,11 @@ namespace fondoxyz.Services
         {
             return _context.Users.ToList();
         }
+
+        public void CreateUser(Users user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+        }
     }
 }

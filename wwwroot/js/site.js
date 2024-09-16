@@ -58,7 +58,7 @@ const dataDetails = function (property) {
                         const row = `
                         <tr>
                             <td>
-                                <div class="details-svg" data-bs-toggle="modal" data-bs-target="#DetailsModal">
+                                <div class="details-svg" data-bs-toggle="modal" data-bs-target="#DetailsModal" data-room-quantity="${room.quantity}" data-room-capacity="${room.capacity}" data-room-description="${room.description}" data-room-normalfee="${room.normalFee}" data-room-specialfee="${room.specialFee}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 100 100"><path fill="#787878" d="M56.774 10.391c-17.679 0-32.001 14.329-32.001 32a31.85 31.85 0 0 0 4.588 16.517L13.846 74.423l.054.054c-1.656 1.585-2.673 3.835-2.673 6.378c-.001 4.913 3.913 8.755 8.821 8.754c2.507-.001 4.749-1.004 6.349-2.636l.039.039l16.008-16.009a31.9 31.9 0 0 0 14.33 3.388c17.68 0 31.999-14.327 31.999-32c0-17.671-14.32-32-31.999-32m.194 51.417c-11.05 0-20.001-8.954-20.001-20c0-11.044 8.951-20 20.001-20s19.999 8.955 19.999 20c.001 11.046-8.949 20-19.999 20"/></svg>
                                 </div>
                             </td>
@@ -78,8 +78,27 @@ const dataDetails = function (property) {
 
                         tbodyRooms.innerHTML += row;
                     });
+
+                    const roomDetails = document.querySelector('#roomDetails');
                 })
     } catch (error) {
         console.error(error.Message);
     }
 }
+
+const modal = document.getElementById('DetailsModal');
+
+modal.addEventListener('show.bs.modal', function (event) {
+    const button = event.relatedTarget;
+    const description = button.getAttribute('data-room-description');
+    const quantity = button.getAttribute('data-room-quantity');
+    const capacity = button.getAttribute('data-room-capacity');
+    const normalfee = button.getAttribute('data-room-normalfee');
+    const specialfee = button.getAttribute('data-room-specialfee');
+
+    document.getElementById('roomDescription').innerText = description;
+    document.getElementById('roomsQuantity').innerText = quantity;
+    document.getElementById('roomsCapacity').innerText = capacity;
+    document.getElementById('roomsNormalFee').innerText = normalfee;
+    document.getElementById('roomsSpecialFee').innerText = specialfee;
+});

@@ -10,6 +10,7 @@ builder.Services.AddDbContext<FondoxyzContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FondoxyzContext")));
 
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<ReserveRepository>();
 
 // Cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)

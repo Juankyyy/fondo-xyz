@@ -12,8 +12,8 @@ CREATE TABLE Users (
 INSERT INTO Users (Name, Document, Email, Password) 
 VALUES ('Juanky', 1025643816, 'juanky@gmail.com', '1234');
 
-TRUNCATE TABLE Properties;
-
+DROP TABLE Rooms;
+DROP TABLE Properties;
 CREATE TABLE Properties (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Name VARCHAR(100) NOT NULL,
@@ -32,12 +32,11 @@ INSERT INTO Properties (Name, Description, Type, Location, Image1, Image2, Image
 VALUES ('Sede Recreativa el Placer', 'Esta Sede recreativa se encuentra ubicada en la vereda El Placer del municipio de Fusagasugá, a unos 10 minutos del casco urbano', 'Sede Recreativa', 'Fusagasugá', 'https://i.postimg.cc/W1q31x3V/image.png', 'https://i.postimg.cc/3Nb8KZQW/el-Placer2.jpg', 'https://i.postimg.cc/QCMNGyPR/el-Placer3.jpg');
 
 INSERT INTO Properties (Name, Description, Type, Location, Image1, Image2, Image3)
-VALUES ('Apartamentos Medellín', 'Ubicado en la Calle 49 B N° 64B-15 en el edificio Suramericana N° 6 Apartamento 1204. Cerca del campus de la Universidad Nacional de Colombia', 'Apartamento', 'Antioquia', 'https://i.postimg.cc/W3dj5kkv/suramericana1.png', 'https://i.postimg.cc/KYqx7N4f/suramericana2.jpg', 'https://i.postimg.cc/fbTM0FWk/suramericana3.jpg');
+VALUES ('Edificio Suramericana', 'Ubicado en la Calle 49 B N° 64B-15 en el edificio Suramericana N° 6 Apartamento 1204. Cerca del campus de la Universidad Nacional de Colombia', 'Apartamento', 'Antioquia', 'https://i.postimg.cc/W3dj5kkv/suramericana1.png', 'https://i.postimg.cc/KYqx7N4f/suramericana2.jpg', 'https://i.postimg.cc/fbTM0FWk/suramericana3.jpg');
 
 INSERT INTO Properties (Name, Description, Type, Location, Image1, Image2, Image3)
-VALUES ('Apartamentos Santa Marta', 'Ubicados en el edificio REINA 1 de la Carrera 3 número 7-85 centro urbano y turístico El Rodadero y a tres cuadras de la playa.', 'Apartamento', 'Santa Marta', 'https://i.postimg.cc/pLsg3dxX/reina1.png', 'https://i.postimg.cc/d0XgtSLb/reina2.jpg', 'https://i.postimg.cc/rpzvTLFG/reina3.jpg');
+VALUES ('Edificio Reina 1', 'Ubicados en el edificio REINA 1 de la Carrera 3 número 7-85 centro urbano y turístico El Rodadero y a tres cuadras de la playa.', 'Apartamento', 'Santa Marta', 'https://i.postimg.cc/pLsg3dxX/reina1.png', 'https://i.postimg.cc/d0XgtSLb/reina2.jpg', 'https://i.postimg.cc/rpzvTLFG/reina3.jpg');
 
-DROP TABLE Rooms;
 CREATE TABLE Rooms (
     Id INT PRIMARY KEY IDENTITY(1,1),
     Description VARCHAR(200) NOT NULL,
@@ -65,4 +64,23 @@ VALUES ('Habitación con 2 camas sencillas y baño privado.', 1, 2, '$63.000', '
 
 INSERT INTO Rooms (Description, Quantity, Capacity, NormalFee, SpecialFee, PropertyId)
 VALUES ('Apartamento con sala comedor, cocina, 2 baños, tres habitaciones y un sitio para parqueo. Capacidad máxima: 8 personas.', 1, 8, '$103.000', '$89.000', 4),
-('Apartamento Tiene Sala comedor, cocina, 1 baño, dos habitaciones y un sitio para parqueo. Capacidad máxima: 6 personas.', 2, 6, '$103.000', '$89.000', 4),
+('Apartamento Tiene Sala comedor, cocina, 1 baño, dos habitaciones y un sitio para parqueo. Capacidad máxima: 6 personas.', 2, 6, '$103.000', '$89.000', 4)
+
+DROP TABLE Reserves;
+CREATE TABLE Reserves (
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    Location VARCHAR(100) NOT NULL,
+    ReservationDate VARCHAR(100) NOT NULL,
+    ArrivalDate VARCHAR(100) NOT NULL,
+    DepartureDate VARCHAR(100) NOT NULL,
+    Persons INT NOT NULL,
+    Rooms INT NOT NULL,
+	Total VARCHAR(100) NOT NULL,
+    UserId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(Id)
+);
+
+INSERT INTO Reserves (Location, ReservationDate, ArrivalDate, DepartureDate, Persons, Rooms, Total, UserId)
+VALUES ('Sede Recreativa Villeta', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$800.000', 1),
+('Sede Recreativa el Placer', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$800.000', 10),
+('Edificio Suramericana', '2024-10-10', '2024-10-15', '2024-10-20', 4, 2, '$800.000', 11);

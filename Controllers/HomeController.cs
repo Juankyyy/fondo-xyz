@@ -2,6 +2,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using fondoxyz.Models;
 using fondoxyz.Data;
+using fondoxyz.Services;
+using System.Security.Claims;
 
 namespace fondoxyz.Controllers;
 
@@ -9,11 +11,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly FondoxyzContext _context;
+    private readonly ReserveRepository _reserveRepository;
 
-    public HomeController(ILogger<HomeController> logger, FondoxyzContext context)
+    public HomeController(ILogger<HomeController> logger, FondoxyzContext context, ReserveRepository reserveRepository)
     {
         _logger = logger;
         _context = context;
+        _reserveRepository = reserveRepository;
     }
 
     public IActionResult Index()
@@ -32,7 +36,10 @@ public class HomeController : Controller
         {
             return RedirectToAction("Index", "Auth");
         }
-        return View();
+
+        var userId = int.TryParse(User.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value, out var result) ? result : (int?)null;
+        var reserves = _reserveRepository.GetReserves(userId);
+        return View(reserves);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

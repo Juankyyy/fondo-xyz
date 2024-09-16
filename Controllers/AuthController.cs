@@ -52,7 +52,8 @@ namespace fondoxyz.Controllers
 
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, userFound.Name)
+                    new Claim(ClaimTypes.Name, userFound.Name),
+                    new Claim("UserId", userFound.Id.ToString())
                 };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);

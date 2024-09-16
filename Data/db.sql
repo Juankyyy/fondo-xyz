@@ -12,7 +12,7 @@ CREATE TABLE Users (
 INSERT INTO Users (Name, Document, Email, Password) 
 VALUES ('Juanky', 1025643816, 'juanky@gmail.com', '1234');
 
-DROP TABLE Properties;
+TRUNCATE TABLE Properties;
 
 CREATE TABLE Properties (
     Id INT PRIMARY KEY IDENTITY(1,1),
@@ -32,17 +32,37 @@ INSERT INTO Properties (Name, Description, Type, Location, Image1, Image2, Image
 VALUES ('Sede Recreativa el Placer', 'Esta Sede recreativa se encuentra ubicada en la vereda El Placer del municipio de Fusagasugá, a unos 10 minutos del casco urbano', 'Sede Recreativa', 'Fusagasugá', 'https://i.postimg.cc/W1q31x3V/image.png', 'https://i.postimg.cc/3Nb8KZQW/el-Placer2.jpg', 'https://i.postimg.cc/QCMNGyPR/el-Placer3.jpg');
 
 INSERT INTO Properties (Name, Description, Type, Location, Image1, Image2, Image3)
-VALUES ('Edificio Suramericana', 'Ubicado en la Calle 49 B N° 64B-15 en el edificio Suramericana N° 6 Apartamento 1204. Cerca del campus de la Universidad Nacional de Colombia', 'Apartamento', 'Antioquia', 'https://i.postimg.cc/W3dj5kkv/suramericana1.png', 'https://i.postimg.cc/KYqx7N4f/suramericana2.jpg', 'https://i.postimg.cc/fbTM0FWk/suramericana3.jpg');
+VALUES ('Apartamentos Medellín', 'Ubicado en la Calle 49 B N° 64B-15 en el edificio Suramericana N° 6 Apartamento 1204. Cerca del campus de la Universidad Nacional de Colombia', 'Apartamento', 'Antioquia', 'https://i.postimg.cc/W3dj5kkv/suramericana1.png', 'https://i.postimg.cc/KYqx7N4f/suramericana2.jpg', 'https://i.postimg.cc/fbTM0FWk/suramericana3.jpg');
 
 INSERT INTO Properties (Name, Description, Type, Location, Image1, Image2, Image3)
-VALUES ('Edificio Reina 1', 'Ubicados en el edificio REINA 1 de la Carrera 3 número 7-85 centro urbano y turístico El Rodadero y a tres cuadras de la playa.', 'Apartamento', 'Santa Marta', 'https://i.postimg.cc/pLsg3dxX/reina1.png', 'https://i.postimg.cc/d0XgtSLb/reina2.jpg', 'https://i.postimg.cc/rpzvTLFG/reina3.jpg');
+VALUES ('Apartamentos Santa Marta', 'Ubicados en el edificio REINA 1 de la Carrera 3 número 7-85 centro urbano y turístico El Rodadero y a tres cuadras de la playa.', 'Apartamento', 'Santa Marta', 'https://i.postimg.cc/pLsg3dxX/reina1.png', 'https://i.postimg.cc/d0XgtSLb/reina2.jpg', 'https://i.postimg.cc/rpzvTLFG/reina3.jpg');
 
--- CREATE TABLE Rooms (
---     Id INT PRIMARY KEY IDENTITY(1,1),
-    
--- );
-
-CREATE TABLE Reserves (
+DROP TABLE Rooms;
+CREATE TABLE Rooms (
     Id INT PRIMARY KEY IDENTITY(1,1),
-    
+    Description VARCHAR(200) NOT NULL,
+    Quantity INT NOT NULL,
+    Capacity INT NOT NULL,
+    NormalFee VARCHAR(50) NOT NULL,
+    SpecialFee VARCHAR(50) NOT NULL,
+    PropertyId INT NOT NULL,
+    FOREIGN KEY (PropertyId) REFERENCES Properties(Id)
 );
+
+INSERT INTO Rooms (Description, Quantity, Capacity, NormalFee, SpecialFee, PropertyId)
+VALUES ('Ocho habitaciones cada una con una alcoba que tiene una cama doble y un camarote, baño, nevera, televisor y terraza cubierta.', 8, 4, '$70.000', '$60.000', 1)
+
+INSERT INTO Rooms (Description, Quantity, Capacity, NormalFee, SpecialFee, PropertyId)
+VALUES ('Habitación con dos habitaciones, baño y Televisor, una con cama doble y una sencilla, la otra con una cama sencilla.', 2, 4, '$70.000', '$60.000', 2),
+('Habitación con dos habitaciones, baño y Televisor, una con cama doble, la otra con 4 camas sencillas', 2, 6, '$70.000', '$60.000', 2),
+('Habitación con una habitación con cama doble y 2 camas sencillas, baño y Televisor', 1, 4, '$70.000', '$60.000', 2),
+('Habitación con dos habitaciones, baño y Televisor, una con cama doble y una sencilla, la otra con una cama sencilla. ', 2, 4, '$70.000', '$60.000', 2);
+
+INSERT INTO Rooms (Description, Quantity, Capacity, NormalFee, SpecialFee, PropertyId)
+VALUES ('Habitación con 2 camas sencillas y baño privado.', 1, 2, '$63.000', '$53.000', 3),
+('Habitaciones cada una con 2 camas sencillas.', 3, 2, '$63.000', '$53.000', 3),
+('Habitación con 1 cama sencilla y baño privado', 1, 1, '$63.000', '$53.000', 3);
+
+INSERT INTO Rooms (Description, Quantity, Capacity, NormalFee, SpecialFee, PropertyId)
+VALUES ('Apartamento con sala comedor, cocina, 2 baños, tres habitaciones y un sitio para parqueo. Capacidad máxima: 8 personas.', 1, 8, '$103.000', '$89.000', 4),
+('Apartamento Tiene Sala comedor, cocina, 1 baño, dos habitaciones y un sitio para parqueo. Capacidad máxima: 6 personas.', 2, 6, '$103.000', '$89.000', 4),
